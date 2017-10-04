@@ -1,0 +1,16 @@
+
+<button class="btn btn-primary waves-light" type="button" (click)="test.toggle()" mdbRippleRadius>
+    SUB PRODUCTS
+</button>
+
+<br>
+
+<div class="" [mdbCollapse]="isCollapsed" #test="bs-collapse" style="height: 180px;">
+    <div *ngFor="let single of one.variations">
+      <p> {{ single.name }} </p>
+
+      <input type="file" name="photo" id="photo" />
+      <button type="button" class="btn btn-success waves-light" mdbRippleRadius
+      (click)="upload(single._id)">Success</button>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+<br>
+<br>
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-8 card padding">
+    <form [formGroup]="prodform" (ngSubmit)="onSubmit()"  novalidate>
+      <div class="form-group">
+        <label>Brand</label>
+        <input type="text" formControlName="brand" class="form-control">
+      </div>
+
+
+      <div class="form-group">
+        <label>Category</label>
+        <input type="text" formControlName="category" class="form-control">
+      </div>
+
+      <button type="button" class="btn btn-info waves-light"
+        (click)="addVar()"
+      mdbRippleRadius >
+        add
+      </button>
+
+      <div formArrayName="variations" >
+        <div *ngFor="let one of variations.controls; let i = index" [formGroupName]="i"
+        class="card">
+          <div class="card-body">
+            <h3>Product {{ i + 1 }}</h3>
+          
+          <div class="form-group">
+            <label for="">Product Name</label>
+            <input type="text" formControlName="name" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <label for="">Price</label>
+            <input type="text" formControlName="price" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <label for="">Packsize</label>
+            <input type="text" formControlName="packsize" class="form-control">
+          </div>
+
+          <button type="button"
+          class="btn btn-danger waves-light"
+          mdbRippleRadius (click)="rem(i)">
+          Danger
+        </button>
+        </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-success waves-light" mdbRippleRadius>Create</button>
+    </form>
+  </div>
+</div>

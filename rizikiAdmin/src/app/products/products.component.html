@@ -1,0 +1,42 @@
+  <br>
+  <br>
+  <div>
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <div class="float-left">
+        <h3> Products Listing </h3>
+      </div>
+
+      <div class="float-right">
+        <a type="button" routerLink="/new_product"
+         class="btn btn-primary waves-light" mdbRippleRadius>
+          add
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <div class="list-group" *ngIf="products">
+        <li class="list-group-item" *ngFor="let one of products">
+        <div>
+          <h3>{{ one.brand }}</h3>
+        </div>
+           <div  *ngIf="products">
+
+             <collapse-list [one]="one"></collapse-list>
+             <!--<button type="button" class="btn btn-warning waves-light" mdbRippleRadius>Edit</button>
+             <button type="button" class="btn btn-danger waves-light" mdbRippleRadius>delete</button>-->
+           </div>
+        </li>
+
+
+      </div>
+    </div>
+  </div>
+</div>
