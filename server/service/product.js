@@ -94,7 +94,7 @@ var product = {
 		
 		console.log(req.body);
 		
-		cloudinary.config({ 
+		/*cloudinary.config({ 
 		  cloud_name: 'dxomvhu0p', 
 		  api_key: '811296612498678', 
 		  api_secret: 'j8BV1pcR-Jagxi63jCJSAMrImVM' 
@@ -116,7 +116,7 @@ var product = {
 					// res.status(200).json(docs);
 					});
 			 }); 
-		}); 
+		}); */
 
 	}
 
