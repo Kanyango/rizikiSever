@@ -103,7 +103,11 @@ var product = {
 			 console.log('two ' + result);
 			 var fieldsToSet = { photo : result.secure_url };
 				var options = { new : true };
-			     req.app.db.models.Product.findByIdAndUpdate(id, fieldsToSet, options, function(err , docs){
+			     req.app.db.models.Product.update
+			     ({_id:  mongoose.Types.ObjectId(id) }
+			      ,{$addToSet: { variations : { _id : mongoose.Types.ObjectId(req.body.id),  
+							    photo : result.secure_url }}}
+			      function(err , docs){
 						if(err)
 					{
 						return next(err);
