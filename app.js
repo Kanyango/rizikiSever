@@ -26,7 +26,7 @@ require('./models')(app, mongoose);
 
 app.set('port' , config.port);
 
-app.use(express.static(__dirname + '/rizikiAdmin/src'));
+app.use(express.static(__dirname + '/rizikiAdmin/src/index.html'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(session({
