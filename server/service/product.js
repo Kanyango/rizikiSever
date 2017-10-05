@@ -93,8 +93,31 @@ var product = {
 	{
 		
 		console.log(req.body);
-		
-		/*cloudinary.config({ 
+				var storage = multer.diskStorage({
+					destination: function(request , file , callback)
+					{
+						callback(null , './client/www/uploads');
+					},
+					filename: function (request, file, callback) {
+				    callback(null, file.originalname)
+				  }
+				});
+
+
+		     var upload = multer({ //multer settings
+				    storage: storage
+				}).single('file');
+
+				upload(req,res,function(err){
+			    if(err){
+				 res.json({error_code:1,err_desc:err});
+				 return;
+			    }
+		res.json({error_code:0,err_desc:null});
+					
+		var pathy = req.file.path;
+					
+		cloudinary.config({ 
 		  cloud_name: 'dxomvhu0p', 
 		  api_key: '811296612498678', 
 		  api_secret: 'j8BV1pcR-Jagxi63jCJSAMrImVM' 
@@ -116,7 +139,7 @@ var product = {
 					// res.status(200).json(docs);
 					});
 			 }); 
-		}); */
+		}); 
 
 	}
 
