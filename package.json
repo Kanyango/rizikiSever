@@ -2,10 +2,14 @@
   "name": "rizikisever",
   "version": "1.0.0",
   "description": "admin server",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
+  "engines": {
+    "node": "^6.0.0",
+    "npm": "^3.8.8"
+},
   "keywords": [
     "admin"
   ],
