@@ -2,8 +2,10 @@
 var mongoose = require('mongoose');
 var multer = require('multer');
 var formidable = require('formidable');
-var upload = multer({dest: DIR}).single('photo');
-var DIR = './uploads/';
+//var upload = multer({dest: DIR}).single('photo');
+//var DIR = './uploads/';
+var apikey   = 'b08b2c77192e5dc068f327209015659596c3eb85cda37524729622dd0968d53e';
+var cloudinary = require('cloudinary');
 
 var product = {
 
