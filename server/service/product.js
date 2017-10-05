@@ -87,21 +87,31 @@ var product = {
 	  		});
 
 	  },
-		upload: function(req, res, next)
-		{
-     var path = '';
-     upload(req, res, function (err) {
-        if (err) {
-          // An error occurred when uploading
-          console.log(err);
-          return res.status(422).send("an Error occured")
-        }
-       // No error occured.
-        path = req.file.path;
-        return res.send("Upload Completed for "+path);
-  });
-}
+	upload: function(req, res, next)
+	{
+		
+		
+		cloudinary.config({ 
+		  cloud_name: 'dxomvhu0p', 
+		  api_key: '811296612498678', 
+		  api_secret: 'j8BV1pcR-Jagxi63jCJSAMrImVM' 
+		});
+			cloudinary.uploader.upload(pathy,
+			function(result) {
+			 console.log('two ' + result);
+			 var fieldsToSet = { photo : result.secure_url };
+				var options = { new : true };
+			     req.app.db.models.Product.findByIdAndUpdate(id, fieldsToSet, options, function(err , docs){
+						if(err)
+					{
+						return next(err);
+					}
+					// res.status(200).json(docs);
+					});
+			 }); 
+		}); 
 
+	}
 
 }
 module.exports = product;
