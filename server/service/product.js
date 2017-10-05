@@ -92,6 +92,7 @@ var product = {
 	upload: function(req, res, next)
 	{
 		
+		console.log(req.body);
 		
 		cloudinary.config({ 
 		  cloud_name: 'dxomvhu0p', 
