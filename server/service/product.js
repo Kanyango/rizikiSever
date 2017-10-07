@@ -132,7 +132,7 @@ var product = {
 			     req.app.db.models.Product.update
 			     ({_id:  mongoose.Types.ObjectId(id)},
 			      {variations: {packsize: req.body.prodName}},
-			      {$addToSet: {variations: {photo : result.secure_url }}},
+			      {$addToSet: {photo : result.secure_url }},
 			       
 			      function(err , docs){
 						if(err)
