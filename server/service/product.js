@@ -129,7 +129,7 @@ var product = {
 				var options = { new : true };
 			     req.app.db.models.Product.update
 			     ({_id:  mongoose.Types.ObjectId(id)}
-			      ,{$addToSet: { variations : { _id : mongoose.Types.ObjectId(req.body.id),  
+			      ,{$addToSet: { variations : { _id : mongoose.Types.ObjectId(req.body.prodId),  
 							    photo : result.secure_url }}},
 			      function(err , docs){
 						if(err)
