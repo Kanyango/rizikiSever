@@ -91,6 +91,7 @@ var product = {
 	  },
 	upload: function(req, res, next)
 	{
+		var id = mongoose.Types.ObjectId(req.params.id);
 		
 		console.log(req.body);
 				var storage = multer.diskStorage({
