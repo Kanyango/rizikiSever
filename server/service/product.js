@@ -131,8 +131,8 @@ var product = {
 			 var fieldsToSet = { photo : result.secure_url };
 				var options = { new : true };
 			     req.app.db.models.Product.update
-			     ({ _id: id, variations.packsize: req.body.prodName},
-			      {$addToSet: {variations: {photo : result.secure_url }}},
+			     ({ _id: id, "variations.packsize": req.body.prodName},
+			      {$push: {"variations": {"photo": result.secure_url }}},
 			       
 			      function(err , docs){
 						if(err)
