@@ -131,8 +131,7 @@ var product = {
 			 var fieldsToSet = { photo : result.secure_url };
 				var options = { new : true };
 			     req.app.db.models.Product.update
-			     ({_id:  mongoose.Types.ObjectId(id) , 
-			       variations: {packsize: req.body.prodName}},
+			     ({ _id: id, variations: {packsize: req.body.prodName}},
 			      {$addToSet: {photo : result.secure_url }},
 			       
 			      function(err , docs){
