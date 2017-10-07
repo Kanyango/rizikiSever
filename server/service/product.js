@@ -113,7 +113,9 @@ var product = {
 				 res.json({error_code:1,err_desc:err});
 				 return;
 			    }
-		res.json({error_code:0,err_desc:null});
+		//res.json({error_code:0,err_desc:null});
+					
+		res.json({sent: req.body});
 					
 		var pathy = req.file.path;
 					
