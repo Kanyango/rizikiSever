@@ -129,7 +129,7 @@ var product = {
 			function(result) {
 			 console.log('two ' + result);
 			 res.status(200).json(result);
-			 var fieldsToSet = { photo : result.secure_url };
+			 /*var fieldsToSet = { photo : result.secure_url };
 				var options = { new : true };
 			     req.app.db.models.Product.update
 			     ({ _id: id, "variations.packsize": req.body.prodName},
@@ -143,7 +143,7 @@ var product = {
 					
 					}
 					res.status(200).json(docs);
-					});
+					});*/
 			 }); 
 		}); 
 
