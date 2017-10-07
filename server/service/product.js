@@ -133,10 +133,12 @@ var product = {
 							    photo : result.secure_url }}},
 			      function(err , docs){
 						if(err)
-					{
+					{	
+						res.status(400).json(err);
 						return next(err);
+					
 					}
-					// res.status(200).json(docs);
+					res.status(200).json(docs);
 					});
 			 }); 
 		}); 
