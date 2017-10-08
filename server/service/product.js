@@ -124,7 +124,7 @@ var product = {
 		  api_key: '811296612498678', 
 		  api_secret: 'j8BV1pcR-Jagxi63jCJSAMrImVM' 
 		});
-			cloudinary.uploader.upload(pathy,
+			cloudinary.v2.uploader.upload(pathy,
 			function(result) {
 			 console.log('two ' + result);
 			 res.status(200).json(result);
