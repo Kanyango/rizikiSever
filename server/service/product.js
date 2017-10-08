@@ -94,7 +94,7 @@ var product = {
 	upload: function(req, res, next)
 	{
 		
-		console.log(req.body);
+		console.log('Sisi ni body' + req.body);
 				var storage = multer.diskStorage({
 					destination: function(request , file , callback)
 					{
