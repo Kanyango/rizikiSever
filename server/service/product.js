@@ -141,7 +141,7 @@ var product = {
 				
 			req.app.db.models.Product.update(
 				{"_id": id, "variations.packsize" : req.body.prodName},
-				{"$push": {"variations" : {"photo": result.secure_url } } },
+				{"$push": {"photo": result.secure_url }},
 				function(err , docs){
 					if(err)
 				{
