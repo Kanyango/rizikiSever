@@ -91,7 +91,6 @@ var product = {
 	  },
 	upload: function(req, res, next)
 	{
-		var id = mongoose.Types.ObjectId(req.params.id);
 		
 		console.log(req.body);
 				var storage = multer.diskStorage({
@@ -132,9 +131,10 @@ var product = {
 				
 			 var fieldsToSet = { photo : result.secure_url };
 			 var options = { new : true };
-				
+			
+			var id = mongoose.Types.ObjectId(req.params.id);
 			req.app.db.models.Product.findByIdAndUpdate(
-				mongoose.Types.ObjectId(id) , fieldsToSet ,
+				id, fieldsToSet ,
 				options , function(err , docs){
 					if(err)
 				{
