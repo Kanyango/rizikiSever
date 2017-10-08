@@ -15,6 +15,7 @@ var product = {
 		{
 			brand      : req.body.brand,
 			category   : req.body.category,
+			photo      : 'my photo',
 			variations : req.body.variations
 		};
 
