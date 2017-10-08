@@ -125,7 +125,8 @@ var product = {
 		  api_secret: 'j8BV1pcR-Jagxi63jCJSAMrImVM' 
 		});
 			cloudinary.v2.uploader.upload(pathy,
-			function(result) {
+			function(error, result) {
+				
 			 console.log('two ' + result);
 			 res.status(200).json(result);
 				
@@ -142,6 +143,7 @@ var product = {
 				}
 				 res.status(200).json(docs);
 				});
+				
 			 }); 
 		}); 
 
