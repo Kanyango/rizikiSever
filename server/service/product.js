@@ -130,7 +130,7 @@ var product = {
 			function(error, result) {
 				
 			 console.log('Iam the error' + error);	
-			 console.log('two ' + result.json());
+			 console.log('two ' + result);
 				
 			 //res.status(200).json(result);
 				
