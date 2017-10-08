@@ -10,6 +10,7 @@ module.exports = function(app , mongoose)
 	//owner      : {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
 	brand      : String,
 	category   : String,
+	photo      : String,
 	variations : []
 	});
 	app.db.model('Product', productSchema);
