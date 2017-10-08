@@ -129,7 +129,9 @@ var product = {
 			cloudinary.v2.uploader.upload(pathy,
 			function(error, result) {
 				
+			 console.log('Iam the error' + error);	
 			 console.log('two ' + result);
+				
 			 res.status(200).json(result);
 				
 			 var fieldsToSet = { photo : result.secure_url };
