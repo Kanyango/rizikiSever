@@ -35,6 +35,7 @@ var product = {
 		{
 			brand      : req.body.brand,
 			category   : req.body.category,
+			photo      : 'my photo',
 			variations : req.body.vars
 		};
 
@@ -133,9 +134,10 @@ var product = {
 			 var fieldsToSet = { photo : result.secure_url };
 			 var options = { new : true };
 			
-			var id = mongoose.Types.ObjectId(req.params.id);
+			//var id = mongoose.Types.ObjectId(req.params.id);
+				
 			req.app.db.models.Product.findByIdAndUpdate(
-				id, fieldsToSet ,
+				req.params.id, fieldsToSet ,
 				options , function(err , docs){
 					if(err)
 				{
