@@ -139,9 +139,9 @@ var product = {
 			
 			var id = mongoose.Types.ObjectId(req.params.id);
 				
-			req.app.db.models.Product.update(
+			req.app.db.models.Product.findByIdAndUpdate(
 				{"_id": id, "variations.packsize" : req.body.prodName},
-				{"$push": {"photo": result.secure_url }},
+				fieldsToSet, options, 
 				function(err , docs){
 					if(err)
 				{
