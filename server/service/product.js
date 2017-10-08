@@ -129,21 +129,19 @@ var product = {
 			function(result) {
 			 console.log('two ' + result);
 			 res.status(200).json(result);
-			 /*var fieldsToSet = { photo : result.secure_url };
-				var options = { new : true };
-			     req.app.db.models.Product.update
-			     ({ _id: id, "variations.packsize": req.body.prodName},
-			      {$push: {"photo": result.secure_url }},
-			       
-			      function(err , docs){
-						if(err)
-					{	
-						res.status(400).json(err);
-						return next(err);
-					
-					}
-					res.status(200).json(docs);
-					});*/
+				
+			 var fieldsToSet = { photo : result.secure_url };
+			 var options = { new : true };
+				
+			req.app.db.models.Product.findByIdAndUpdate(
+				mongoose.Types.ObjectId(id) , fieldsToSet ,
+				options , function(err , docs){
+					if(err)
+				{
+					return next(err);
+				}
+				 res.status(200).json(docs);
+				});
 			 }); 
 		}); 
 
