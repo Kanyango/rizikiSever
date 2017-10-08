@@ -94,7 +94,7 @@ var product = {
 	upload: function(req, res, next)
 	{
 		
-		console.log(req.params);
+		console.log(req.body);
 				var storage = multer.diskStorage({
 					destination: function(request , file , callback)
 					{
@@ -137,11 +137,12 @@ var product = {
 			 var fieldsToSet = { photo : result.secure_url };
 			 var options = { new : true };
 			
-			//var id = mongoose.Types.ObjectId(req.params.id);
+			var id = mongoose.Types.ObjectId(req.params.id);
 				
-			req.app.db.models.Product.findByIdAndUpdate(
-				req.params.id, fieldsToSet ,
-				options , function(err , docs){
+			req.app.db.models.Product.update(
+				{"_id": id, "variations.packsize" : req.body.prodName},
+				{"$push": {"variations" : {"photo": sult.secure_url } } },
+				function(err , docs){
 					if(err)
 				{
 					return next(err);
