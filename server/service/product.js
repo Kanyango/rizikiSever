@@ -94,7 +94,7 @@ var product = {
 	upload: function(req, res, next)
 	{
 		
-		console.log(req.body);
+		console.log(req.params);
 				var storage = multer.diskStorage({
 					destination: function(request , file , callback)
 					{
@@ -117,7 +117,7 @@ var product = {
 			    }
 		//res.json({error_code:0,err_desc:null});
 					
-		res.json({sent: req.body});
+		//res.json({sent: req.body});
 					
 		var pathy = req.file.path;
 					
@@ -130,9 +130,9 @@ var product = {
 			function(error, result) {
 				
 			 console.log('Iam the error' + error);	
-			 console.log('two ' + result);
+			 console.log('two ' + result.json());
 				
-			 res.status(200).json(result);
+			 //res.status(200).json(result);
 				
 			 var fieldsToSet = { photo : result.secure_url };
 			 var options = { new : true };
