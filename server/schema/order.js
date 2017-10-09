@@ -9,7 +9,7 @@ module.exports = function(app , mongoose)
 	dateCreated: {type: Date, default: Date.now()},
 	order_no   : {type: String},
 	//from	   : {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
-	from       : {name: string, phone: string},
+	from       : {name: String, phone: String},
 	//to	  	   : {type: mongoose.Schema.Types.ObjectId, ref: 'User'}, 
 	products   : [],
 	total      : {type: String},
