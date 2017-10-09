@@ -13,7 +13,7 @@ module.exports = function(app , mongoose)
 	//to	  	   : {type: mongoose.Schema.Types.ObjectId, ref: 'User'}, 
 	products   : [],
 	total      : {type: String},
-	//status     : {type: String},
+	status     : {type: String},
 	//delivery   : {type: String},
 	payment    : {type: String}
 
