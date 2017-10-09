@@ -10,11 +10,11 @@ var order = {
 		{
 			order_no   : req.body.order_no,
 			from	   : req.body.from,
-			to	  	   : req.body.to, 
+			//to	   : req.body.to, 
 			products   : req.body.products,
 			total      : req.body.total,
 			status     : req.body.stats,
-			delivery   : req.body.delivery,
+			//delivery   : req.body.delivery,
 			payment    : req.body.payment
 		};
 		
