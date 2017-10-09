@@ -21,7 +21,7 @@ module.exports = function(app , passport)
 
     app.get('/order/:id'  ,  order.single);
     app.post('/order'  , order.create);
-    app.put('/order' , order.update);
+    app.put('/order/:id' , order.update);
     app.get('/order'  , order.read);
 
     app.delete('/product/:id'  ,  product.remove);
