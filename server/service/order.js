@@ -30,10 +30,10 @@ var order = {
 	},
 	update : function(req , res , next)
 	{
-		var id = req.body.id;
+		var id = req.params.id;
 		var fieldsToSet = 
 		{
-			status     : req.body.stats,
+			status     : 'received',
 		};
 
 		var options = { new : true };
