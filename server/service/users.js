@@ -25,9 +25,9 @@ var user = {
 		var user = new req.app.db.models.User();
 
 		user.username = req.body.username;
-		user.email = req.body.email;
+		//user.email = req.body.email;
 		user.phone = req.body.phone;
-		user.subscription = 'pending';
+		user.location =  req.body.location;
 		user.setPassword(req.body.password)
 
 		user.save(function(err){
