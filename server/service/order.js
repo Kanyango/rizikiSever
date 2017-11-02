@@ -8,6 +8,7 @@ var order = {
 	{
 		var fieldsToSet = 
 		{
+			user       : req.payload._id,
 			order_no   : req.body.order_no,
 			from	   : req.body.from,
 			//to	   : req.body.to, 
