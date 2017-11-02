@@ -4,8 +4,8 @@ var mongoose = require('mongoose');
 //var redisClient = require('redis').createClient;
 //var redis = redisClient(6379, 'localhost');
 var config = require('./config');
-//var jwt = require('express-jwt');
-//var auth  = jwt({ secret : config.secret , userProperty: 'payload'});
+var jwt = require('express-jwt');
+var auth  = jwt({ secret : config.secret , userProperty: 'payload'});
 var passport = require('./passport');
 //var cache = require('express-redis-cache')();
 //var cache = require('express-redis-cache')({ prefix: 'llabsApp' });
@@ -20,13 +20,13 @@ module.exports = function(app , passport)
 {
 
     app.get('/order/:id'  ,  order.single);
-    app.post('/order'  , order.create);
+    app.post('/order', auth , order.create);
     app.put('/order/:id' , order.update);
     app.get('/order'  , order.read);
 
     app.delete('/product/:id'  ,  product.remove);
     app.put('/upload/:id'  ,  product.upload);
-    app.post('/product'  , product.create);
+    app.post('/product', product.create);
     app.put('/product' , product.update);
     app.get('/product'  , product.read);
 
